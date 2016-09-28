@@ -5,8 +5,11 @@ var app = express();
 
 let port = process.env.PORT || 3000;
 
+app.use(express.static('public'));
+
 app.get('/', function (req, res) {
-  res.send('Hello World!');
+//   res.send('Hello World!');
+    res.sendfile(__dirname + 'index.html');
 });
 
 app.listen(port, function () {
